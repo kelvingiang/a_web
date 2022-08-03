@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+.my-row .col-lg-4 {
+  border-bottom: 0.1rem dotted #ccc;
+  border-left: 0.1rem dotted #ccc;
+  padding: 1rem; }
+
+.text-title {
+  font-size: 1.5rem;
+  color: red;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 1rem;
+  background-color: #f3f3f3;
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  font-family: "Times New Roman", Times, serif; }
+
+.text-content {
+  color: #999; }
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #0077ff; }
+
+.square {
+  width: 50px;
+  height: 50px;
+  border-radius: 0;
+  background-color: green; }
+
+.ng-class-one {
+  color: blue;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-shadow: 2px 2px 2px #666; }
+
+.ng-class-tow {
+  color: green;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-shadow: 2px 2px 2px #666; }
+
+.list-style {
+  display: flex;
+  flex-direction: row; }
+  .list-style li {
+    flex: 1;
+    list-style: none; }
+    .list-style li p {
+      font-size: 1.5rem;
+      font-weight: bold; }
+
+.member-list div {
+  padding: 10px;
+  border-bottom: 0.1rem solid white;
+  display: flex;
+  justify-content: space-between; }
+  .member-list div label:nth-child(1) {
+    font-weight: bold; }
+  .member-list div label:nth-child(2) {
+    font-style: italic;
+    opacity: 0.5; }
+.member-list .male {
+  background-color: #064d86;
+  color: white; }
+.member-list .Female {
+  background-color: #815504;
+  color: white; }

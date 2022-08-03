@@ -1,0 +1,151 @@
+<div class="row my-row">
+    <div class="col-lg-4">
+        <div>
+            <label class="text-title">
+                Normal Binding
+            </label>
+
+        </div>
+        <div>
+            <label>
+                Ten : {{Name}}
+                Tuoi : {{Age + 2}}
+            </label>
+        </div>
+        <div>
+            <label class="text-content"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis sequi, eaque
+                laboriosam
+                non consectetur
+                dolores, asperiores voluptatum distinctio cumque atque iste beatae id natus aspernatur amet fuga esse
+                obcaecati
+                error.</label>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <label class="text-title">
+                Property Binding
+            </label>
+        </div>
+        <div>
+            <img [src]="imgSrc" />
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <label class="text-title">Event Binding</label>
+        </div>
+        <div>
+            <div>
+                <button (click)="showAndHide()" class="btn btn-primary"> click me</button>
+                <label [hidden]=" hidden"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo, unde.</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <label class="text-title">Two way Binding event</label>
+        </div>
+        <div>
+
+            <input type="text" placeholder="enter something you want" (keyup)="showEvent($event)" /><br>
+            <label> something you enter : {{something}} </label>
+            <!-- <label for="example-ngModel">[(ngModel)]:</label>
+            <input [(ngModel)]="currentItem.name" id="example-ngModel"> -->
+        </div>
+        <div>
+            <label>
+                Two way Binding phải add thêm Form module từ AngularForm
+            </label>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <label class="text-title">Two way Binding ngForm</label>
+        </div>
+        <div>
+            <form #f1="ngForm">
+                <label>{{ f1.value | json }}</label>
+                <div>
+                    Name: <input type="text" name='name' ngModel>
+                </div>
+                <div>
+                    Roll: <input type="text" name='roll' ngModel>
+                </div>
+            </form>
+        </div>
+        <div>
+            <label>
+                khi sử dụng ngForm ta phải add thêm FormsModule, và add thêm import trong trang app.module
+            </label>
+
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <label class="text-title">Binding Style and class by ngForm </label>
+        </div>
+        <div>
+            <form #f2="ngForm">
+                <div>
+                    <!-- lay tri cua 1 truong trong form-->
+                    Name: <input type="text" name='first' ngModel #first="ngModel">
+                </div>
+                <div>
+                    <h5 [style.color]="first.value.length % 2===0 ? 'blue' : 'green'"> doi theo so nhap chan
+                        le : {{first.value }}</h5>
+                </div>
+                <div [class]="first.value.length % 2===0 ? 'circle' : 'square'">
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <label class="text-title">ngStyle and ngClass </label>
+        </div>
+        <div>
+            <label [ngClass]="'ng-class-one'"> use ngStyle </label>
+        </div>
+        <div>
+            <label [ngClass]="'ng-class-tow'"> use ngStyle </label>
+        </div>
+        <div>
+            <label [ngStyle]="{'color': '#666', 'font-size': '1.2rem', 'font-weight': 'bold'}">
+                user ngStyle
+            </label>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <label class="text-title">ngIf and ngFor </label>
+        </div>
+
+        <div>
+            <button (click)="condition = !condition" class="btn btn-primary"> Toggle</button>
+        </div>
+        <div *ngIf="condition">
+            <label [ngClass]="'ng-class-one'"> use ngIf </label>
+        </div>
+        <hr>
+        <div>
+            <label [ngClass]="'ng-class-tow'"> use ngFor </label>
+            <ul [ngClass]="'list-style'">
+                <li *ngFor="let item of arrList">
+                    <p>{{'l:' + item + ','}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>

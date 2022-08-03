@@ -1,0 +1,5 @@
+<h1>xóa data của parent thông qua click xóa từ Child</h1>
+<div [ngClass]="'member-list'" *ngFor=" let member of memberList">
+    <app-child-item [name]="member.name" [age]="member.age" [gender]="member.gender" (click)=removeMember(member.name)>
+    </app-child-item>
+</div>

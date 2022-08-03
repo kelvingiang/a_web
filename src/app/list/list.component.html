@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col-lg-6">
+        <div>
+            <label class="text-title">ngFor For Object </label>
+        </div>
+        <div>
+            <select [(ngModel)]="filterStatus">
+                <option value="all" selected>All</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <br />
+        </div>
+
+
+        <div [ngClass]="'member-list'" *ngFor=" let member of memberList">
+            <div [ngClass]="member.gender === 'female' ? 'Female': 'male'" *ngIf=getFilterGender(member.gender)>
+                <label>name : {{member.name}} </label>
+                <label>Age : {{member.age}}</label>
+                <label>{{member.join? 'tham gia' : 'khong tham gia'}}</label>
+            </div>
+        </div>
+
+        <!-- hien thi cac item thong list add them component template vao ============================== -->
+        <div [ngClass]="'member-list'" *ngFor=" let list of memberList">
+            <app-list-item [name]="list.name" [age]="list.age"> </app-list-item>
+        </div>
+    </div>
+
+
+
+    <div class="col-lg-6">
+        <div>
+            <label class="text-title">Add Item to Object </label>
+        </div>
+        <div *ngIf="isShowForm" style="margin-bottom: 2rem;">
+            <input type="text" class="form-control" placeholder="Name" [(ngModel)]="memberName" />
+            <input type="text" class="form-control" placeholder="Age" [(ngModel)]="memberAge" />
+
+            <input type="radio" id="male" name="male" [(ngModel)]="memberGender" value="male">
+            <label>Male</label><br>
+            <input type="radio" id="female" name="female" [(ngModel)]="memberGender" value="female">
+            <label>Female</label><br>
+
+            <label>tham gia </label>
+            <input type="checkbox" name="join" id="join" [(ngModel)]="memberJoin" />
+
+            <div style="text-align: center; margin:1rem">
+                <button class="btn btn-primary" (click)="addMember()">Submit</button>
+            </div>
+        </div>
+        <div style="text-align: center; margin:1rem">
+            <button class="btn btn-danger" (click)="isShowForm = true" *ngIf="!isShowForm">Add New</button>
+        </div>
+
+        <div [ngClass]="'member-list'">
+            <div *ngFor=" let member of memberList" [ngClass]="member.gender === 'female' ? 'Female': 'male'">
+                <label>name : {{member.name}} </label>
+                <label>Age : {{member.age}}</label>
+                <label>{{member.join}}</label>
+                <button (click)="member.join = !member.join"> Join </button>
+                <button (click)="removeMember(member.id)">Remove</button>
+            </div>
+        </div>
+    </div>
+
+</div>
