@@ -1,0 +1,10 @@
+<div>
+  <h1> COURSES LIST</h1>
+  <div class="course-list" *ngFor="let course of courseList">
+    <div class="course-list-item" dwHighlight>
+      <div>{{course.id}}</div>
+      <div>{{course.name | capitalize}}</div>
+      <div ><a (click)="viewDetail(course.id)">view</a></div>
+    </div>
+  </div>
+</div>

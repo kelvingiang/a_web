@@ -1,0 +1,35 @@
+.product-list {
+    > li {
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        .product-list-title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            h2 {
+                font-size: 2rem;
+                font-weight: bold;
+                color: rgb(1, 106, 192);
+            }
+            label {
+                padding-left: 3rem;
+                color: #ccc;
+                font-size: 0.8rem;
+            }
+        }
+
+        .product-list-content {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            img {
+                margin-right: 1rem;
+                border-radius: 0.3rem;
+            }
+            .product-list-description {
+                align-items: center;
+            }
+        }
+    }
+}

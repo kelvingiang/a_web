@@ -1,4 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(~ng-zorro-antd/ng-zorro-antd.min.css);
+@import url(~ng-zorro-antd/button/style/index.min.css);
+h1 {
+  color: #802603;
+  font-size: 1rem;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 2rem; }
+
+ul li {
+  list-style: none; }
+  ul li i {
+    cursor: pointer; }
+
+.rating-space {
+  display: flex;
+  flex-direction: row; }
+
+.rating-list {
+  display: flex;
+  flex-direction: row;
+  margin-right: 2rem; }
+  .rating-list li {
+    margin: 0.2rem; }
+    .rating-list li i {
+      font-size: 1rem; }
+
 .my-row .col-lg-4 {
   border-bottom: 0.1rem dotted #ccc;
   border-left: 0.1rem dotted #ccc;
@@ -19,17 +48,30 @@
 .text-content {
   color: #999; }
 
+@keyframes example {
+  from {
+    transform: scale(0.5, 0.5);
+    opacity: 0; }
+  to {
+    transform: scale(1, 1);
+    opacity: 1; } }
 .circle {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #0077ff; }
+  background-color: #0077ff;
+  margin: 2rem;
+  animation-name: example;
+  animation-duration: 1s; }
 
 .square {
   width: 50px;
   height: 50px;
-  border-radius: 0;
-  background-color: green; }
+  border-radius: 3px;
+  background-color: green;
+  margin: 2rem;
+  animation-name: example;
+  animation-duration: 1s; }
 
 .ng-class-one {
   color: blue;
@@ -53,19 +95,29 @@
       font-size: 1.5rem;
       font-weight: bold; }
 
-.member-list div {
-  padding: 10px;
-  border-bottom: 0.1rem solid white;
-  display: flex;
-  justify-content: space-between; }
-  .member-list div label:nth-child(1) {
-    font-weight: bold; }
-  .member-list div label:nth-child(2) {
-    font-style: italic;
-    opacity: 0.5; }
-.member-list .male {
-  background-color: #064d86;
-  color: white; }
-.member-list .Female {
-  background-color: #815504;
-  color: white; }
+
+.product-list > li {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem; }
+  .product-list > li .product-list-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    .product-list > li .product-list-title h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #016ac0; }
+    .product-list > li .product-list-title label {
+      padding-left: 3rem;
+      color: #ccc;
+      font-size: 0.8rem; }
+  .product-list > li .product-list-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; }
+    .product-list > li .product-list-content img {
+      margin-right: 1rem;
+      border-radius: 0.3rem; }
+    .product-list > li .product-list-content .product-list-description {
+      align-items: center; }

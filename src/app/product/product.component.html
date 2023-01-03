@@ -1,0 +1,36 @@
+<h1> Product List</h1>
+<button (click)="onClickMe($event)"> click me </button>
+<div *ngIf="products.length == 0; else loading">
+    <h1> without any product </h1>
+</div>
+<ng-template #loading>
+    <div *ngIf="products.length > 0">
+        <ul class="product-list">
+            <li *ngFor="let product of products">
+                <div>
+                    <div class="product-list-title">
+                        <a class="nav-link" [routerLink]="['/product/' + product.id]">
+                            <h2>{{product.productName}}</h2>
+                        </a>
+                        <label>{{product.releaseDate}}</label>
+                    </div>
+
+                    <div class="product-list-content">
+                        <div>
+                            <img src="{{product.imgSrc}}" alt="imageUrl" />
+                        </div>
+                        <div class="product-list-description">
+                            <app-rating [rating]="product.ratingNumber" [review]="product.reviewNumber"></app-rating>
+                            <div>
+                                {{product.description}}
+                            </div>
+                            <div>
+                                <button class="btn btn-primary" (click)="onClick()"> Buy </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</ng-template>

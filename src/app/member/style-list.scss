@@ -1,0 +1,64 @@
+.ant-input {
+  // width: 300px;
+  // margin: 0 8px 8px 0;
+}
+
+.ant-select {
+  // width: 300px;
+}
+
+.ant-btn {
+  margin: 1rem;
+  label {
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+.member-list {
+  background-color: rgb(196, 213, 224);
+  // .ng-star-inserted {
+  //   background-color: aqua;
+  //   height: 200px;
+  //   width: 100%;
+  //   .item {
+  //     background-color: black;
+  //     height: 500px;
+  //     padding: 10px;
+  //     border-bottom: 0.1rem solid white;
+  //     display: flex;
+  //     justify-content: space-between;
+  //     label {
+  //       &:nth-child(1) {
+  //         font-weight: bold;
+  //       }
+  //       &:nth-child(2) {
+  //         font-style: italic;
+  //         opacity: 0.5;
+  //       }
+  //     }
+  //   }
+  // }
+  .list-item {
+    border-bottom: 0.1rem solid white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0.5rem;
+    label {
+      &:nth-child(1) {
+        font-weight: bold;
+      }
+      &:nth-child(2) {
+        font-style: italic;
+      }
+    }
+  }
+  .male {
+    background-color: rgb(240, 240, 240);
+    color: rgb(51, 51, 51);
+  }
+  .female {
+    background-color: rgb(209, 209, 208);
+    color: rgb(51, 51, 51);
+  }
+}

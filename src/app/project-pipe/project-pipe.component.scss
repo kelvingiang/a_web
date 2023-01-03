@@ -1,0 +1,45 @@
+.project-haed-control{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    div{
+        margin: 0 1rem;
+        width: 200px;
+    }
+}
+.course-content{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    div{
+        background-color: #ccc;
+        margin: 0.5rem;
+        padding: 1rem;
+        border-radius: 0.2rem;
+
+     
+    }
+    &-title   {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+
+ 
+}
+   
+ 
+.item-cat{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    div{
+    background-color: green;
+    color: white;
+    margin: 0.2rem;
+    padding: 0.3rem 1rem;
+    border-radius: 0.2rem;
+   }
+
+}

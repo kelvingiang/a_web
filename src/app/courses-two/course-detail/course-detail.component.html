@@ -1,0 +1,31 @@
+<h1>course detail</h1>
+<h3>
+    Serial : {{serial}} - {{courseID}}
+</h3>
+<div>
+    <span> nhap vao ok de thoat duoc trang nay</span>
+    <span><input (keyup)="setAllow($event)" ></span>
+</div>
+<div class="course-menu">
+    <nav  *ngFor="let course of courseList">
+        <span [ngClass]="{'active': course.id === courseID}" (click)="viewDetail(course.id)">{{course.name}}</span>
+        <!-- <span routerLink='{{course.id}}' routerLinkActive="active">{{course.name}}</span> -->
+         
+    </nav>
+</div>
+<div class="course-detail" *ngFor="let item of courseDetail">
+    <div>
+        {{item.name}}
+    </div>
+    <div>
+        {{item.opening}}
+    </div>
+    <div>
+        {{item.description}}
+    </div>
+</div>
+<div>
+    <button (click)="backToCourses()">Back to Courses</button>
+    <button (click)="prev()">Prev</button>
+    <button (click)="next()">Next</button>
+</div>

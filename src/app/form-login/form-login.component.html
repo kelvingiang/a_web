@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-6 offset-3">
+    <form id="loginForm" #loginForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="card">
+        <div class="card-head">
+          <h3> login Form create by template Form</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="txt-email">E-mail</label>
+            <input type="email" class="form-control" id="txt-email" name="txt-email" required minlength="6"
+              placeholder="Email" aria-describedby="emailHid" ngModel #email="ngModel" />
+            <small class="form-text text-muted" id="emailHid"
+              *ngIf="!email?.valid && (email?.dirty || email?.touched)">E-mail is invalid or empty</small>
+          </div>
+          <div class="form-group">
+            <label for="txt-password">Password</label>
+            <input type="password" class="form-control" id="txt-password" name="txt-password" required minlength="3"
+              placeholder="Password" aria-describedby="passwordHid" ngModel #password="ngModel" />
+            <small id="txt-pass" class="form-text text-muted"
+              *ngIf="!password?.valid && (password?.dirty || password?.touched)">Password is invalid or
+              empty</small>
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn btn-primary"> Login </button>
+          <button type="reset" class="btn btn-primary">Reset</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

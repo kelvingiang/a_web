@@ -1,0 +1,15 @@
+
+
+    <div [ngClass]= "gender === 'female' ? 'female': 'male'">
+        <label>{{ name|capitalize}} </label>
+        <label>{{age}}</label>
+        <label>{{gender}}</label>
+        <label>{{vip ? "VIP":"normal"}}</label>
+        <div>
+            <button nz-button nzType="default"  nzShape="round" (click)="vip = !vip">{{vip ? "To Normal":" Up To VIP"}}</button>
+            
+            <button nz-button nzType="primary" nzDanger="true" nzShape="circle" (click)="removeByClick()"> 
+                <label>X</label> 
+            </button>
+        </div>
+    </div>

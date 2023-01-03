@@ -1,0 +1,13 @@
+<div class="rating-space">
+    <div>
+        <ul class="rating-list">
+            <li *ngFor=" let item of ratingList; index as i">
+                <i aria-hidden="true" class='fa fa-star' [ngStyle]="{'color': rating >= i ? 'red' : '#ccc'}"
+                    (click)="onClick(i)"></i>
+            </li>
+        </ul>
+    </div>
+    <div>
+        review {{review}}
+    </div>
+</div>

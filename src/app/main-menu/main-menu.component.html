@@ -1,0 +1,30 @@
+<nav class="row">
+  <nav class="nav justify-content-center">
+    <a class="nav-link" routerLink='/dashboard' routerLinkActive="active">Dashboard</a>
+    <a class="nav-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a class="nav-link" routerLink='/courses' routerLinkActive="active">Courses</a>
+    <a class="nav-link" routerLink='/courses-two' routerLinkActive="active" [queryParams]="{param :'test', page: 2}">Courses 2</a>
+    <a class="nav-link" routerLink='/courses-child-router' routerLinkActive="active">Router Child </a>
+    <a class="nav-link" routerLink='/courses-multi-router' routerLinkActive="active">Router Multi </a>
+    <a class="nav-link" routerLink='/pipes' routerLinkActive="active">pipe</a>
+    
+    <a class="nav-link" routerLink='/product' routerLinkActive="active">Product</a>
+    <a class="nav-link" routerLinkActive="active" [routerLink]="['/member']"> Member </a>
+    <a class="nav-link" routerLink='/project-pipe' routerLinkActive="active">project</a>
+    <!-- <a class="nav-link" routerLinkActive="active" routerLink='/github'> Github </a>
+    <a class="nav-link" routerLinkActive="active" routerLink='/service'> Service </a> -->
+    <!-- <a class="nav-link" routerLinkActive="active" routerLink='/rating'> Rating</a> -->
+    <!-- <a class="nav-link" routerLinkActive="active" routerLink='/form'> Form</a> -->
+    <!-- <a class="nav-link" [routerLink]="['/admin']"> Admin</a> -->
+    <!-- // CACH THU 2 -->
+    <!-- <a class="nav-link" routerLinkActive="active" [routerLink]="['/login']"> Login</a> -->
+    <!-- <a class="nav-link" routerLinkActive="active" [routerLink]="['/register']"> Register</a> -->
+    <!-- <a class="nav-link" routerLinkActive="active" [routerLink]="['/directive']"> Directive</a> -->
+
+  </nav>
+</nav>
+<!-- 
+  <div>
+    <a class="nav-link" [routerLink]="[{ outlets: { second: ['multi-about'] }}]">Add Multi Router </a>
+    <a class="nav-link" [routerLink]="[{ outlets: { second: null }}]">Clear Multi Router </a>
+  </div> -->

@@ -1,0 +1,72 @@
+.course-list {
+    width: 80%;
+    margin: auto auto;
+    &-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+        border-bottom: 1px solid #ccc;
+        a {
+            background-color: rgb(198, 211, 207);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            margin: 0.5rem;
+            color: rgb(255, 253, 253);
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: weight;
+            cursor: pointer;
+            &:hover {
+                background-color: rgb(255, 255, 255);
+                color: rgb(25, 73, 3);
+            }
+        }
+        .btn-view {
+            background-color: green;
+        }
+
+        .btn-edit {
+            background-color: rgb(196, 135, 4);
+        }
+
+        .btn-del {
+            background-color: red;
+        }
+    }
+}
+
+.course-detail {
+    border-bottom: 1px #ccc dotted;
+    padding: 1rem 0.5rem;
+    margin: 2rem;
+    div {
+        &:nth-child(1) {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.course-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    span {
+        border: 2px solid transparent;
+        padding: 0.5rem 1rem;
+        border-radius: 2px;
+        cursor: pointer;
+        &:hover {
+            border: 2px solid #ccc;
+            background-color: #ccc;
+            color: #fff;
+        }
+    }
+    .active {
+        border-bottom: 2px solid #ccc;
+        color: #666;
+    }
+}

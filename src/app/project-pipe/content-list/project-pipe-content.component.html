@@ -1,0 +1,7 @@
+{{typeCurrency + '-- ' + typeSummary}}
+<div class="course-content">
+   <div *ngFor="let course of courses">
+      <Dgw-course-item [course]="course" [typeCurrency]="typeCurrency" [typeSummary]="typeSummary">
+      </Dgw-course-item>
+   </div>
+</div>

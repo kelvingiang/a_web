@@ -1,0 +1,9 @@
+<p dwHighlight>service http get data</p>
+<div>
+    <a (click)="loadPosts()">Load Data</a>
+</div>
+<div *ngFor="let item of dataList">
+    <h3>{{item.title}}</h3>
+    <p>{{item.body}}</p>
+    <hr>
+</div>

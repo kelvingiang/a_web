@@ -1,0 +1,17 @@
+<div>
+  <h1> COURSES LIST BY MULTI ROUTER </h1>
+  <div>
+    <a class="nav-link" [routerLink]="[{ outlets: { second: ['multi-about'] }}]">Add Multi Router </a>
+  </div>
+</div>
+<div class="course-list" *ngFor="let course of courseList">
+  <div class="course-list-item" dwHighlight>
+    <div>{{course.id}}</div>
+    <div>{{course.name | capitalize}}</div>
+    <div>
+      <a class="btn-view" (click)="viewDetail(course.id)">view</a>
+      <a class="btn-edit" (click)="viewEdit(course.id)">edit</a>
+      <a class="btn-del" (click)="viewDel(course.id)">del</a>
+    </div>
+  </div>
+</div>

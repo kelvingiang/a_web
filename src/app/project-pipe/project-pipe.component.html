@@ -1,0 +1,13 @@
+<div>
+   <h3>Project Pipe</h3>
+   <app-head-control 
+       (typeSummaryChange)="changSummary($event)"
+       (typeCurrencyChange)="changCurrency($event)"
+   
+   ></app-head-control>
+   
+   <app-content-list
+   [typeSummary]= "typeSummary"
+   [typeCurrency]= "typeCurrency"
+   ></app-content-list>
+</div>

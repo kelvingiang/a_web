@@ -1,0 +1,19 @@
+<div>
+    <h1>directive, ngStyle and ngClass</h1>
+
+    <button (click)="toggleClick()"> Click Change</button>
+    <div [ngClass]="flag ? 'circle' : 'square'"></div>
+    <h2 [ngStyle]="flag ? styleOne : styleTwo">directive ngStyle</h2>
+
+</div>
+<hr>
+<div>
+    <h1>Attribute Directive </h1>
+    <div>
+        <input type="radio" name="colors" (click)="bgColor='lightgreen'">Green
+        <input type="radio" name="colors" (click)="bgColor='yellow'">Yellow
+        <input type="radio" name="colors" (click)="bgColor='cyan'">Cyan
+    </div>
+    <div>{{bgColor}}</div>
+    <p [dwHighlight] ='bgColor'> Attribute Directive</p>
+</div>

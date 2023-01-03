@@ -1,0 +1,40 @@
+<div>
+    <h1>Data Binding</h1>
+    <div>
+        <label> value binding : {{valueBinding}} </label>
+    </div>
+    <hr>
+    <div>
+        <label> Property Binding </label><br>
+        <img [src]="propertyBinding" />
+    </div>
+    <hr>
+    <div>
+        <label> Event Binding </label><br>
+        <h4>your input : <i>{{value}}</i> </h4>
+        <input type="text" id="txt-binding" name="txt-binding" (keyup)="inputEvent($event);" />
+    </div>
+    <hr>
+    <div>
+        <label> Two way Binding use FormModule</label>
+        <h5>Form Module Binding : <i> {{twoway}}</i></h5>
+        <input type="text" id="txt-twoway-binding" name="txt-twoway-binding" [(ngModel)]="twoway" />
+        <label>Two way bingding phai add them FormsModule trong @angular/forms trong file app.module</label><br>
+    </div>
+    <hr>
+    <div>
+        <label> Template reference variable</label>
+        <h5> Template reference : <i>{{inputValue}}</i></h5>
+        <input type="text" [(ngModel)]="inputValue" #txtValue />
+        <code>{{txtValue.value | json}}</code>
+    </div>
+
+    <hr>
+    <div>
+        <label> Style and class Binding </label><br>
+        <h4> your input : <i [style.color]="flag ? 'red' : 'green'">{{styleBinding}}</i> </h4>
+        <input type="text" id="txt-binding" name="txt-binding" (keyup)="inputStyle($event);" />
+        <div [class]="flag ? 'square' : 'circle'"></div>
+    </div>
+
+</div>

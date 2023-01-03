@@ -1,0 +1,15 @@
+.nav-link{
+    color: rgb(6, 95, 155);
+    font-size: 1rem;
+    &:hover{
+        color:rgb(5, 59, 95); ;
+    }
+
+    border-bottom: #ccc dotted 1px;
+}
+
+.active{
+    color: #999;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

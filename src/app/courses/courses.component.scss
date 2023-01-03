@@ -1,0 +1,34 @@
+.course-list {
+    width: 80%;
+    margin: auto auto;
+    &-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+        border-bottom: 1px solid #ccc;
+        a {
+            background-color: aquamarine;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            color: #666;
+            cursor: pointer;
+            &:hover {
+                background-color: rgb(2, 121, 81);
+                color: rgb(255, 255, 255);
+            }
+        }
+    }
+}
+
+.course-detail {
+    border-bottom: 1px #ccc dotted;
+    padding: 1rem 0.5rem;
+    margin: 2rem;
+    div{
+
+        &:nth-child(1){
+            text-transform: uppercase;
+        }
+    }
+}

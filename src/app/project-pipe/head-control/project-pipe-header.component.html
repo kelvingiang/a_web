@@ -1,0 +1,28 @@
+{{summary}}
+<div class="project-haed-control">
+
+    <div class="form-group">
+        Summary Type
+        <select [(ngModel)]="summary" (ngModelChange)="settingSummary()" class="form-control">
+            <option *ngFor="let summary of summaryArray" value="{{summary.val}}">{{summary.name}}</option>
+
+        </select>
+        <!-- <select #selectSummary (chang)="settingSummary(selectSummary.value)" class="form-control">
+                <option value="0">Small</option>
+                <option value="1" selected>Medium</option>
+                <option value="2">Full</option>
+            </select> -->
+    </div>
+    <div class="form-group">
+        Currency
+        <select [(ngModel)]="currency" (ngModelChange)="settingCurrency()" class="form-control">
+            <option *ngFor="let currency of currencyArray" value="{{currency.val}}">{{currency.name}} </option>
+        </select>
+        <!-- <select #selectCurrency (chang)="settingCurrency(selectCurrency.value)" class="form-control">
+                <option value="vnd">VND</option>
+                <option value="usd" selected>USD</option>
+            </select> -->
+
+    </div>
+
+</div>

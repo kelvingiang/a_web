@@ -1,0 +1,177 @@
+<p>pipe dụng để hiển thị các dạng dữ liệu</p>
+
+<!-- <h4>{{birthday | date:'y-mm-dd'}} </h4>
+<h5>{{address | capitalize}}</h5>
+
+<hr>
+<p> pipe custom lam tron so </p> -->
+<!-- <h4>{{1.1 | roundNum:'true' }}</h4>
+<h4>{{2.4 | roundNum:'false' }}</h4> -->
+
+<div class="pipe-box">
+    <div class="pipe-type"> system pipe </div>
+    <div class="pipe-row title">
+        <div>name</div>
+        <div>input</div>
+        <div>output</div>
+    </div>
+    <div class="pipe-row">
+        <div>lower care</div>
+        <div>{{list.name}}</div>
+        <div>{{list.name | lowercase}}</div>
+    </div>
+
+    <div class="pipe-row">
+        <div>upper care</div>
+        <div>{{list.name}}</div>
+        <div>{{list.name | uppercase}}</div>
+    </div>
+
+    <div class="pipe-row">
+        <div>slice - string</div>
+        <div>{{list.name}}</div>
+        <div>{{list.name | slice: 2:4}}</div>
+    </div>
+
+    <div class="pipe-row">
+        <div>slice - array</div>
+        <div>
+            <ol>
+                <li *ngFor="let course of list.require">{{course}}</li>
+            </ol>
+        </div>
+        <div>
+            <ol>
+                <li *ngFor="let course of list.require | slice: 1:4">{{course}}</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="pipe-row">
+        <div>date</div>
+        <div>{{list.date}}</div>
+        <div>{{list.date | date}},/// {{list.date | date:'y-MM-dd'}}</div>
+    </div>
+
+    <div class="pipe-row">
+        <div>decimal</div>
+        <div>{{list.price}}</div>
+        <div>{{list.price | number: '1.0-2'}}</div>
+    </div>
+
+    <div class="pipe-row">
+        <div>percent</div>
+        <div>{{percentA}}</div>
+        <div>{{percentA | percent: '1.2-3'}}</div>
+    </div>
+
+    <div class="pipe-row">
+        <div>currency</div>
+        <div>{{list.price}}</div>
+        <div>{{list.price | currency: 'VND': false: '1.1-3'}}</div>
+    </div>
+
+
+    <div class="pipe-row">
+        <div>json</div>
+        <div>{{list}}</div>
+        <div>{{list | json}}</div>
+    </div>
+
+    <div class="pipe-row">
+        <div>use multi pipe</div>
+        <div>{{list}}</div>
+        <div>{{list | json | uppercase}}</div>
+    </div>
+
+
+
+
+    <div class="pipe-type">custom pipe</div>
+    <div class="pipe-row title">
+        <div>name</div>
+        <div>input</div>
+        <div>output</div>
+    </div>
+    <div class="pipe-row">
+        <div>capitalize</div>
+        <div>{{list.name}}</div>
+        <div>{{list.name | capitalize}}</div>
+    </div>
+
+    <div class="pipe-row">
+        <div>array</div>
+        <div>
+            <ol>
+                <li *ngFor="let item of numberArray">{{item}}</li>
+            </ol>
+        </div>
+        <div>
+            <ol>
+                <li *ngFor="let item of numberArray | array:'odd' ">{{item}}</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="pipe-row">
+        <div>array</div>
+        <div>
+            <ol>
+                <li *ngFor="let item of numberArray">{{item}}</li>
+            </ol>
+        </div>
+        <div>
+            <ol>
+                <li *ngFor="let item of numberArray | array:'event' ">{{item}}</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="pipe-row">
+        <div>sort - asc</div>
+        <div>
+            <ol>
+                <li *ngFor="let item of list.require">{{item}}</li>
+            </ol>
+        </div>
+        <div>
+            <ol>
+                <li *ngFor="let item of list.require | sort:'asc' ">{{item}}</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="pipe-row">
+        <div>sort - desc</div>
+        <div>
+            <ol>
+                <li *ngFor="let item of list.require">{{item}}</li>
+            </ol>
+        </div>
+        <div>
+            <ol>
+                <li *ngFor="let item of list.require | sort:'desc' ">{{item}}</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="pipe-row">
+        <div>summary</div>
+        <div>{{description}}</div>
+        <div>{{description | summary: 10: ' nhien hon ....'}}</div>
+    </div>
+
+    <div class="pipe-row">
+        <div>category</div>
+        <div>
+            <ol>
+                <li *ngFor="let item of   categoryArray"> {{item}} </li>
+            </ol>
+        </div>
+        <div>
+            <ol>
+                <li *ngFor="let item of   categoryArray | category"> {{item}} </li>
+            </ol>
+        </div>
+    </div>
+</div>

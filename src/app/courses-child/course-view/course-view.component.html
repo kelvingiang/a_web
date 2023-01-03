@@ -1,0 +1,16 @@
+<!-- <div class="course-detail" *ngFor="let item of courseDetail"> -->
+    <h1> view </h1>
+<div class="course-detail">
+    <div>
+        {{courseDetail[0].name}}
+    </div>
+    <div>
+        {{courseDetail[0].opening}}
+    </div>
+    <div>
+        {{courseDetail[0].description}}
+    </div>
+</div>
+<div>
+    <button (click)="backToCourses()">Back to Courses</button>
+</div>
