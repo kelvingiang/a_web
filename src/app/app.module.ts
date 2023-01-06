@@ -22,8 +22,10 @@ import { ProductService } from './product/product.service';
 
 import { RoutingComponent } from './routing/routing.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+
 // content style ding san
 import { cardContentComponent } from './ng-content/card-content.component';
+
 // phan service
 import { DatabindingComponent } from './databinding/databinding.component';
 

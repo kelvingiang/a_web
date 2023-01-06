@@ -1,7 +1,33 @@
 <p> use navigate at ts go to the page</p>
 <div>
-  <button (click)="gotoLogin()"> go to Login </button>
+  <button nz-button nzSize='large' nzType="primary" (click)="gotoLogin()"> go to Login </button>
 </div>
 <div>
-  <button (click)="gotoRating()"> go to Rating </button>
+  <button nz-button [nzSize]="size" nzShape='round' nzType="default"(click)="gotoRating()"> go to Rating </button>
 </div>
+<div>
+  <button button nz-button nz-dropdown [nzDropdownMenu]="menu">Actions<i nz-icon nzType="down"></i></button>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <ul nz-menu>
+        <li nz-menu-item>
+          <a>1st item</a>
+        </li>
+        <li nz-menu-item>
+          <a>2nd item</a>
+        </li>
+        <li nz-menu-item>
+          <a>3rd item</a>
+        </li>
+      </ul>
+    </nz-dropdown-menu>
+</div>
+
+<button nz-button [nzType]="'primary'" (click)="showModal()">
+  <span>Show Modal</span>
+</button>
+<nz-modal [(nzVisible)]="isVisible" nzTitle="The first Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+  <p>Content one</p>
+  <p>Content two</p>
+  <p>Content three</p>
+  <p>Content three</p>
+</nz-modal>
