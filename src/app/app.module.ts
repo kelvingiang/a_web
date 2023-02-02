@@ -57,6 +57,7 @@ import { CoursesChildModule } from './courses-child/courses-child.module';
 import { CoursesMultiModule } from './courses-multi/courses-multi.module';
 import { DashboardModule } from './dashboard/dashboard.module'
 import { MemberModule } from './member/member.module';
+import { ProductsModule } from './products/products.module';
 
 // ANT UI DESIGN ========================================================
 import {NgNzAntdModule} from'./ant-nz.module';
@@ -133,8 +134,12 @@ registerLocaleData(en);
     ProjectPipeModule,
     NgNzAntdModule,
     MemberModule,
+    ProductsModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule    // module chính nay phải ở dưới cùng để chạy dc các router trong các module
+  ],
+  exports:[
+    RatingComponent,
   ],
   providers: [ProductService, RatingService, { provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

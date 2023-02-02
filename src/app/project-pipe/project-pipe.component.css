@@ -1,0 +1,62 @@
+.project-haed-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.project-haed-control div {
+  margin: 0 1rem;
+  width: 200px;
+}
+
+.course-content {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.course-content div {
+  background-color: #ccc;
+  margin: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.2rem;
+}
+
+.course-content-title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.item-cat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.item-cat div {
+  background-color: green;
+  color: white;
+  margin: 0.2rem;
+  padding: 0.3rem 1rem;
+  border-radius: 0.2rem;
+}
+/*# sourceMappingURL=project-pipe.component.css.map */

@@ -1,0 +1,20 @@
+.nav-link {
+  color: rgba(1, 82, 158, 0.5);
+  font-size: 0.8rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-transform: uppercase;
+  border-bottom: #ccc dotted 1px;
+}
+
+.nav-link:hover {
+  color: #01529e;
+}
+
+.active {
+  color: #999;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-weight: bold;
+}
+/*# sourceMappingURL=main-menu.component.css.map */

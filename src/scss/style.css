@@ -1,0 +1,156 @@
+h1 {
+  color: #802603;
+  font-size: 1rem;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 2rem;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li i {
+  cursor: pointer;
+}
+
+.rating-space {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.rating-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-right: 2rem;
+}
+
+.rating-list li {
+  margin: 0.2rem;
+}
+
+.rating-list li i {
+  font-size: 1rem;
+}
+
+.my-row .col-lg-4 {
+  border-bottom: 0.1rem dotted #ccc;
+  border-left: 0.1rem dotted #ccc;
+  padding: 1rem;
+}
+
+.text-title {
+  font-size: 1.5rem;
+  color: red;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 1rem;
+  background-color: #f3f3f3;
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.text-content {
+  color: #999;
+}
+
+@-webkit-keyframes example {
+  from {
+    -webkit-transform: scale(0.5, 0.5);
+            transform: scale(0.5, 0.5);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@keyframes example {
+  from {
+    -webkit-transform: scale(0.5, 0.5);
+            transform: scale(0.5, 0.5);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #0077ff;
+  margin: 2rem;
+  -webkit-animation-name: example;
+          animation-name: example;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  border-radius: 3px;
+  background-color: green;
+  margin: 2rem;
+  -webkit-animation-name: example;
+          animation-name: example;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.ng-class-one {
+  color: blue;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-shadow: 2px 2px 2px #666;
+}
+
+.ng-class-tow {
+  color: green;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-shadow: 2px 2px 2px #666;
+}
+
+.list-style {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.list-style li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  list-style: none;
+}
+
+.list-style li p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,43 @@
+.course-list {
+  width: 80%;
+  margin: auto auto;
+}
+
+.course-list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.course-list-item a {
+  background-color: aquamarine;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  color: #666;
+  cursor: pointer;
+}
+
+.course-list-item a:hover {
+  background-color: #027951;
+  color: white;
+}
+
+.course-detail {
+  border-bottom: 1px #ccc dotted;
+  padding: 1rem 0.5rem;
+  margin: 2rem;
+}
+
+.course-detail div:nth-child(1) {
+  text-transform: uppercase;
+}
+/*# sourceMappingURL=courses.component.css.map */

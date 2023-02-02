@@ -1,0 +1,21 @@
+<p>
+  products works! aaaaaaa
+</p>
+<div class="list-box">
+  <ng-template #name ngFor let-item [ngForOf]=productList let-i="index">
+    <div class="list-box-item">
+      <!-- <div class="list-box-item-name">{{item.productName | capitalize}}</div> -->
+      <div class="list-box-item-date">
+        <span> Post Date : {{item.releaseDate}}</span>
+        <span> View : {{item.reviewNumber}}</span>
+      </div>
+      <div class="list-box-item-img">
+        <img src="{{item.imgSrc}}" />
+      </div>
+      <div>
+        <app-rating-two [rating]="item.ratingNumber" [review]="item.reviewNumber"></app-rating-two>
+      </div>
+      <div class="list-box-item-des">{{item.description}}</div>
+    </div>
+  </ng-template>
+</div>

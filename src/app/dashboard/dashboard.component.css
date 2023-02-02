@@ -1,0 +1,39 @@
+.dashboard-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.dashboard-box .dashboard-menu {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #ececec;
+}
+
+.dashboard-box .dashboard-menu .mm {
+  font-size: 2rem;
+  color: yellow;
+  text-decoration: none;
+  text-align: center;
+}
+
+.dashboard-box .dashboard-content {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  background-color: #999;
+}
+
+button {
+  color: #0400ff;
+  margin: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  border-color: red;
+}
+/*# sourceMappingURL=dashboard.component.css.map */

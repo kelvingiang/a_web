@@ -1,0 +1,42 @@
+.ant-btn {
+  margin: 1rem;
+}
+
+.ant-btn label {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.member-list {
+  background-color: #c4d5e0;
+}
+
+.member-list .list-item {
+  border-bottom: 0.1rem solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 0.5rem;
+}
+
+.member-list .list-item label:nth-child(1) {
+  font-weight: bold;
+}
+
+.member-list .list-item label:nth-child(2) {
+  font-style: italic;
+}
+
+.member-list .male {
+  background-color: #f0f0f0;
+  color: #333333;
+}
+
+.member-list .female {
+  background-color: #d1d1d0;
+  color: #333333;
+}
+/*# sourceMappingURL=style-list.css.map */

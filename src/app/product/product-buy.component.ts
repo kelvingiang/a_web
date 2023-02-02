@@ -9,9 +9,9 @@ import { ProductService } from './product.service';
 export class ProductBuyComponent implements OnInit {
   productID: string = '';
   constructor(private _router: ActivatedRoute) {
-    // if (_router.snapshot.params['id']) {
-    //   this.productID = _router.snapshot.params['id'];
-    // }
+    if (_router.snapshot.params['id']) {
+      this.productID = _router.snapshot.params['id'];
+    }
   }
 
   ngOnInit() {

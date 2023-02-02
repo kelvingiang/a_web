@@ -1,5 +1,5 @@
 <h1> Product List</h1>
-<button (click)="onClickMe($event)"> click me </button>
+<button nz-button nzType="primary" [nzSize]="size" nzShape="round" (click)="onClickMe($event)"> click me </button>
 <div *ngIf="products.length == 0; else loading">
     <h1> without any product </h1>
 </div>
