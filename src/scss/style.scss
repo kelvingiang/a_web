@@ -18,7 +18,12 @@ ul li {
 }
 .rating-space {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    div{
+        &:nth-child(2){
+            margin-left: 2rem;
+        }
+    }
 }
 
 .rating-list {

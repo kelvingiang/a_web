@@ -1,68 +1,114 @@
 <h1>input - Output - ngfor - ngClass - event bidding </h1>
+
 <div *ngIf="isShowForm" style="background-color: rgb(236, 236, 238);">
-    <nz-divider nzOrientation="left" nzText="Horizontal"></nz-divider>
+    <nz-divider nzOrientation="left" nzText="Member Information"></nz-divider>
     <div nz-row [nzGutter]="[16, 24]" nzJustify="center">
         <div nz-col nzSpan="8">
             <input nz-input type="text" placeholder="name" [(ngModel)]="name" />
         </div>
         <div nz-col nzSpan="8">
-            <input nz-input type="text" placeholder="0" [(ngModel)]="age" (mouseup)="clearInput()" />
+            <input nz-input type="number" placeholder="0" [(ngModel)]="age" (keypress)="keyPress($event)" />
         </div>
         <div nz-col nzSpan="8">
-            <nz-select ngModel="lucy" [(ngModel)]="gender">
+            <nz-select [(ngModel)]="addGender">
                 <nz-option nzValue="female" nzLabel="Females"></nz-option>
                 <nz-option nzValue="male" nzLabel="Male"></nz-option>
             </nz-select>
         </div>
         <div nz-col nzSpan="24">
-            <button nz-button nzType="primary" nzShape="round" (click)="isShowForm = false"> Cancel </button>
-        </div>
+            <button nz-button nzType="default" nzShape="round" (click)="isShowForm = false"> Cancel </button>
+            <button nz-button nzType="primary" nzShape="round" (click)="addMember()"> Add New </button>
 
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isShowEditFrom" class="edit-from">
+    <div>
+        <input nz-input type="text" #fullName [value]="memberInfo.name" />
+    </div>
+    <div>
+        <input nz-input type="number" #Age [value]="memberInfo.age" (keypress)="keyPress($event)" />
+    </div>
+    <div>
+        <nz-select [ngModel]="memberInfo.gender" (ngModelChange)="genderChange($event)">
+            <nz-option nzValue="female" nzLabel="Females"></nz-option>
+            <nz-option nzValue="male" nzLabel="Male"></nz-option>
+        </nz-select>
+    </div>
+    <div>
+        <nz-radio-group [ngModel]="memberInfo.vip" (ngModelChange)="vipChange($event)">
+            <label nz-radio nzValue="1">VIP</label>
+            <label nz-radio nzValue="0">Normal</label>
+        </nz-radio-group>
+    </div>
+    <div>
+        <button nz-button nzType="default" nzShape="round" (click)="cancelUpdateMember()"> Cancel </button>
+        <button nz-button nzType="primary" nzShape="round"
+            (click)="saveUpdateMember(memberInfo.id, fullName.value, Age.value)"> Update </button>
     </div>
 
-    <nz-card style="width:300px;" nzTitle="Card title" [nzExtra]="extraTemplate">
-        <p>Card content</p>
-        <p>Card content</p>
-        <p>Card content</p>
-    </nz-card>
-    <ng-template #extraTemplate>
-        <a>More</a>
-    </ng-template>
 </div>
 <!-- <button nz-button nzType="primary">Primary</button>
 <button nz-button nzType="default">Default</button>
 <button nz-button nzType="dashed">Dashed</button>
 <a nz-button nzType="link">Link</a> -->
-<button nz-button nzType="primary" (click)="isShowForm = true" *ngIf="!isShowForm"> Add new member</button>
-<br><br>
+<div class="member-header" *ngIf="isHeader">
+    <span>
+        <button nz-button nzShape="round" nzType="primary" (click)="isShowForm = true" *ngIf="!isShowForm "> Add new
+            member</button>
+    </span>
 
-<!-- loc filter gender -->
-<nz-select [(ngModel)]="filterGender">
-    <nz-option nzValue="all" nzLabel="All"></nz-option>
-    <nz-option nzValue="male" nzLabel="Male"></nz-option>
-    <nz-option nzValue="female" nzLabel="Female"></nz-option>
-    <label>xóa data của parent thông qua click xóa từ Child</label><br>
-</nz-select>
-<br><br>
+    <span>
+        <!-- loc filter gender -->
+        <nz-select [ngStyle]="{'width':'100px'}" [(ngModel)]="filterGender" (ngModelChange)="selFilterGender($event)">
+            <nz-option *ngFor="let item of genderList" [nzValue]="item.id" [nzLabel]="item.gender"></nz-option>
+        </nz-select>
+    </span>
+</div>
+
+<div class="child-member-list">
+    <ng-template ngFor let-member [ngForOf]="showMember">
+        <app-child-item [name]="member.name" [age]="member.age" [gender]="member.gender" [vip]="member.vip"
+            (removeMember)=removeMember(member.id)>
+        </app-child-item>
+    </ng-template>
+</div>
+
+
+
 <!-- function filterShow de loc phan tu filter -->
 <div [ngClass]="'member-list'">
+    <div class="list-item list-header">
+        <div> Name</div>
+        <div> Age <i class="fa fa-sort" aria-hidden="true" (click)="sortAge()"></i> </div>
+        <div> Gender</div>
+        <div> Category</div>
+        <div></div>
+    </div>
     <!-- <div *ngFor=" let member of memberList"> -->
-    <ng-template ngFor let-member [ngForOf]= "memberList">
+    <ng-template ngFor let-member [ngForOf]="showMember">
 
-        <div [ngClass]= "member.gender === 'female' ? 'female list-item': 'male list-item'">
-            <label>{{ member.name|capitalize}} </label>
-            <label>{{member.age}}</label>
-            <label>{{member.gender}}</label>
-            <label>{{member.vip ? "VIP":"normal"}}</label>
+        <div class="list-item" [ngClass]="member.gender === 'female' ? 'female': 'male'">
+            <div> {{member.id}} - {{ member.name|capitalize}}</div>
+            <div>{{member.age}}</div>
+            <div>{{member.gender}}</div>
+            <div>{{member.vip == 1 ? "VIP":"normal"}}</div>
             <div>
-                <button nz-button nzType="default"  nzShape="round" (click)="vip = !vip">{{vip ? "To Normal":" Up To VIP"}}</button>
-                <button nz-button nzType="primary" nzDanger="true" nzShape="circle" (click)="removeByClick(member.id)"> 
-                    <label>X</label> 
+                <button nz-button nzType="default" nzShape="round" (click)="member.vip = member.vip == '1'? '0' : '1'">
+                    {{member.vip == '1' ? "To Normal ":"Up To VIP"}}
                 </button>
+
+                <button nz-button nzType="primary" nzShape="circle" nzDanger="false" (click)="editMember(member.id)">
+                    <label>Edit</label>
+                </button>
+
+                <button nz-button nzType="primary" nzShape="circle" nzDanger="true" (click)="removeMember(member.id)">
+                    <label>X</label>
+                </button>
+
             </div>
         </div>
-        <!-- <app-child-item [name]="member.name" [age]="member.age" [gender]="member.gender" [vip]="member.vip"
-            (removeMember)=removeMember(member.id) *ngIf="filerShow(member.gender)">
-        </app-child-item> -->
+
     </ng-template>
 </div>

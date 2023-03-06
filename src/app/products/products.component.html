@@ -1,21 +1,29 @@
-<p>
-  products works! aaaaaaa
-</p>
-<div class="list-box">
+<div class="product-header">
+  <span>
+    <button nz-button nzType="primary" nzGhost="true" nzLoading={{loading}} nzSize="large" nzShape="round"
+      (click)="onClickMe($event)"> Chang Image
+      Color</button>
+  </span>
+  <span>
+    <i class="fa fa-th-list" [class.list-active]="!isList" aria-hidden="true" (click)="changListStyle('table')"></i>
+    <i class="fa fa-th" [class.list-active]="isList" aria-hidden="true" (click)="changListStyle('list')"></i>
+  </span>
+</div>
+
+<div [ngClass]="{'list-box' : isList, 'table-box' : !isList}" >
   <ng-template #name ngFor let-item [ngForOf]=productList let-i="index">
-    <div class="list-box-item">
-      <!-- <div class="list-box-item-name">{{item.productName | capitalize}}</div> -->
-      <div class="list-box-item-date">
+    <div class="box-item">
+      <div class="box-item-date">
         <span> Post Date : {{item.releaseDate}}</span>
-        <span> View : {{item.reviewNumber}}</span>
       </div>
-      <div class="list-box-item-img">
-        <img src="{{item.imgSrc}}" />
+      <div class="box-item-img">
+        <img [class.gray_style]="gray_active" src="{{item.imgSrc}}" (click)="clickImg($event)" />
       </div>
-      <div>
-        <app-rating-two [rating]="item.ratingNumber" [review]="item.reviewNumber"></app-rating-two>
+      <div class="box-item-rating">
+        <app-rating-two class="rating" [rating]="item.ratingNumber" [review]="item.reviewNumber"></app-rating-two>
       </div>
-      <div class="list-box-item-des">{{item.description}}</div>
+      
+      <div class="box-item-des">{{item.description}}</div>
     </div>
   </ng-template>
 </div>

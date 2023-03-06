@@ -1,10 +1,36 @@
+.product-header {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    span {
+        display: flex;
+        align-items: center;
+        i {
+            color: rgba(11, 77, 153, 0.4);
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            cursor: pointer;
+            transition-duration: 0.5s;
+            &:hover {
+                color: rgba(11, 77, 153, 1);
+            }
+        }
+        .list-active{
+            color: rgba(11, 77, 153, 1);
+            cursor: default;
+        }
+    }
+}
+
 .list-box {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: left;
+    transition-duration: 1s;
 
-    &-item {
+    .box-item {
         border: 1px solid #ccc;
         margin: 5px;
         padding: 5px;
@@ -20,24 +46,83 @@
             }
         }
 
-    
-        &-img {
+        .box-item-img {
             text-align: center;
-           img{
-            border-radius: 3px;
-           }
+            img {
+                border-radius: 3px;
+                transition-duration: 1s;
+                box-shadow: 2px 2px 8px #888888;
+                border: 1px solid #fff;
+            }
+            .gray_style {
+                filter: grayscale(100%);
+                opacity: 0.7;
+                border-radius: 50%;
+                transition-duration: 0.5s;
+            }
         }
 
-        &-name {
-            text-align: center;
-            font-size: 20px;
-        }
-
-        &-date {
+        .box-item-date {
             font-size: 12px;
             color: #999;
             text-align: right;
-            background-color: rgb(240, 241, 241);
         }
     }
 }
+
+.table-box {
+    display: flex;
+    flex-direction: column;
+    transition-duration: 1s;
+    .box-item {
+        border: 1px solid #ccc;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+
+        div {
+            margin: 2px;
+            span {
+                margin-left: 20px;
+            }
+        }
+
+        .box-item-date {
+            font-size: 12px;
+            color: #999;
+            order: 1;
+            position: absolute;
+            left: 170px;
+        }
+
+        .box-item-rating {
+            margin-top: 1.5rem;
+            order: 2;
+          
+        }
+        .box-item-img {
+            text-align: center;
+            order: 0;
+            img {
+                border-radius: 3px;
+                transition-duration: 1s;
+                box-shadow: 1px 1px 8px #888888;
+                border: 1px solid #fff;
+            }
+            .gray_style {
+                filter: grayscale(0%);
+                opacity: 0.7;
+                border-radius: 50%;
+                transition-duration: 0.5s;
+            }
+        }
+
+        .box-item-des {
+            order: 3;
+        }
+    }
+}
+

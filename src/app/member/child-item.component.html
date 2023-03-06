@@ -1,10 +1,10 @@
 
 
-    <div [ngClass]= "gender === 'female' ? 'female': 'male'">
-        <label>{{ name|capitalize}} </label>
-        <label>{{age}}</label>
-        <label>{{gender}}</label>
-        <label>{{vip ? "VIP":"normal"}}</label>
+    <div class="child-member-list-item"  [ngClass]= "gender === 'female' ? 'child-member-list-female': 'child-member-list-male'">
+        <div>{{ name | capitalize }} </div>
+        <div>{{age}}</div>
+        <div>{{gender}}</div>
+        <div>{{vip ? "VIP":"normal"}}</div>
         <div>
             <button nz-button nzType="default"  nzShape="round" (click)="vip = !vip">{{vip ? "To Normal":" Up To VIP"}}</button>
             
