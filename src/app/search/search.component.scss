@@ -1,0 +1,30 @@
+.search-list{
+    .item{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        img{
+            width: 80px;
+            height: 80px;
+            margin: 0.5rem;
+        }
+        &:nth-child(odd){
+            background-color: #eeebeb;
+        }
+    }
+}
+
+.form-style{
+    display: flex;
+    flex-direction: row;
+    input{
+        margin: 2rem;
+    }
+}
+
+.pagination-box{
+    text-align: center;
+    margin-top: 1rem;
+}

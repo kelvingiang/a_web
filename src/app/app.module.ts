@@ -36,6 +36,7 @@ import { GetDataComponent } from './get-data/get-data.component';
 import { RatingComponent } from './rating/rating.component';
 import { ServiceComponent } from './service/service.component';
 import { FormComponent } from './form/form.component';
+
 // import { ParentListComponent } from './member/parent-list.component';
 import { FormLoginComponent } from './form-login/form-login.component';
 import { FormReactiveComponent } from './form-reactive/form-reactive.component';
@@ -58,7 +59,7 @@ import { CoursesMultiModule } from './courses-multi/courses-multi.module';
 import { DashboardModule } from './dashboard/dashboard.module'
 import { MemberModule } from './member/member.module';
 import { ProductsModule } from './products/products.module';
-
+import { SearchModule } from './search/search.module';
 // ANT UI DESIGN ========================================================
 import {NgNzAntdModule} from'./ant-nz.module';
 
@@ -135,6 +136,7 @@ registerLocaleData(en);
     NgNzAntdModule,
     MemberModule,
     ProductsModule,
+    SearchModule,
     BrowserAnimationsModule,
     AppRoutingModule    // module chính nay phải ở dưới cùng để chạy dc các router trong các module
   ],

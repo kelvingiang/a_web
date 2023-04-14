@@ -1,3 +1,39 @@
-<p>
-  search works!
-</p>
+<h3>
+  observable and get github data by HttpClient, pagination
+</h3>
+<div>
+  <form class="form-style" [formGroup]="form">
+    <input nz-input placeholder="nhap du lieu tim kiem, nhap tren 4 ky tu " nzSize="default" formControlName="searchControl" />
+    <input  type="text" formControlName="searchControl2"  placeholder="phan nay chi test khong tim du lieu" />
+  </form>
+</div>
+
+
+
+<div class="search-list">
+  <!-- <ng-template ngFor let-item [ngForOf]="dataList.items" let-i="index"> -->
+    <div class="item" *ngFor="let item of dataList.slice((currentPageIndex-1)*itemsPerPage, currentPageIndex*itemsPerPage)">
+      <div>
+        <a href="{{item.html_url}}">
+          <img src="{{item.avatar_url}}" alt="{{item.avatar_url}}" />
+        </a>
+      </div>
+      <div>
+        {{item.login}}
+      </div>
+      <div>
+        {{item.id}}
+      </div>
+    </div>
+  <!-- </ng-template> -->
+</div>
+
+<div class="pagination-box">
+  <nz-pagination
+  [nzPageIndex]="currentPageIndex"
+  [nzTotal]="dataList.length"
+  [nzPageSize]="itemsPerPage"
+  (nzPageIndexChange)="onPageIndexChanged($event)">
+</nz-pagination>
+  
+</div>
